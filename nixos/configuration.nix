@@ -109,6 +109,7 @@ in
       "docker"
       "openrazer"
       "gamemode"
+      "corectrl"
     ];
     # packages = with pkgs; [
     #   # discord.override { withMoonlight = true; }
@@ -125,6 +126,7 @@ in
   programs.java = { enable = true; package = pkgs.zulu23; };
 
   programs.firefox.enable = true;
+  programs.thunderbird.enable = true;
   programs.fish.enable = true;
 
   programs.corectrl = {
@@ -181,6 +183,15 @@ in
     openrazer-daemon
 
     comma
+
+    rustc
+    cargo
+    go
+    pnpm
+    zig
+    maven
+    gradle
+    gcc
 
     # noisetorch
     # yad
