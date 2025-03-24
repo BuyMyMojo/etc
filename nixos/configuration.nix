@@ -127,7 +127,10 @@ in
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "buymymojo";
-  programs.java = { enable = true; package = pkgs.zulu23; };
+  programs.java = {
+    enable = true;
+    package = pkgs.zulu23;
+  };
 
   programs.firefox.enable = true;
   programs.thunderbird.enable = true;
@@ -251,6 +254,13 @@ in
   services.openssh.enable = true;
   services.flatpak.enable = true;
   services.pcscd.enable = true;
+
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
 
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
