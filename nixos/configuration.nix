@@ -26,10 +26,7 @@
     inputs.ucodenix.nixosModules.default
   ];
 
-  services.ucodenix = {
-    enable = true;
-    cpuModelId = "00A20F12"; # AMD 5900X
-  };
+
 
   # Use the latest linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -266,16 +263,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  services.flatpak.enable = true;
-  services.pcscd.enable = true;
-
-  services.sunshine = {
-    enable = true;
-    autoStart = true;
-    capSysAdmin = true;
-    openFirewall = true;
-  };
+  
 
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
@@ -289,46 +277,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
-
-  # services.blocky = {
-  #   enable = true;
-  #   settings = {
-  #     ports.dns = 53; # Port for incoming DNS Queries.
-  #     upstreams.groups.default = [
-  #       "https://one.one.one.one/dns-query" # Using Cloudflare's DNS over HTTPS server for resolving queries.
-  #     ];
-  #     # For initially solving DoH/DoT Requests when no system Resolver is available.
-  #     bootstrapDns = {
-  #       upstream = "https://one.one.one.one/dns-query";
-  #       ips = [ "1.1.1.1" "1.0.0.1" ];
-  #     };
-  #     #Enable Blocking of certian domains.
-  #     blocking = {
-  #       blackLists = {
-  #         #Adblocking
-  #         ads = [
-  #           "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-  #           "https://adaway.org/hosts.txt"
-  #           "https://v.firebog.net/hosts/AdguardDNS.txt"
-  #           ];
-  #         #Another filter for blocking adult sites
-  #         adult = ["https://blocklistproject.github.io/Lists/porn.txt"];
-  #         #You can add additional categories
-  #       };
-  #       #Configure what block categories are used
-  #       clientGroupsBlock = {
-  #         default = [ "ads" ];
-  #         # kids-ipad = ["ads" "adult"];
-  #       };
-  #     };
-  #     customDNS = {
-  #       customTTL = "1h";
-  #       mapping = {
-  #         "upload.aria.coffee" = "192.168.20.2";
-  #       };
-  #     };
-  #   };
-  # };
 
   networking.hosts = {
     "192.168.20.2" = [

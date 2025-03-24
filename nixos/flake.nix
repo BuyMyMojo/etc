@@ -34,6 +34,7 @@
         };
         modules = [
           ./configuration.nix
+          ./services.nix
         ];
 
       };
