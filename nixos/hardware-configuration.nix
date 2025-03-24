@@ -194,6 +194,16 @@
     graphics = {
       enable = true;
       enable32Bit = true;
+      
+      # === amdvlk driver ===
+      extraPackages = with pkgs; [
+        amdvlk
+      ];
+      extraPackages32 = with pkgs; [
+        driversi686Linux.amdvlk
+      ];
+      # === amdvlk driver ===
+
     };
 
     openrazer.enable = true;
