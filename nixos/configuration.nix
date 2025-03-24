@@ -338,13 +338,13 @@
     '';
   };
 
-  environment.variables = {
-    # === Prefer RADV driver ===
-    AMD_VULKAN_ICD = "RADV";
-  };
+  # environment.variables = {
+  # };
 
   environment.sessionVariables = {
-    FLAKE = "/etc/nixos";
+    # === Prefer RADV driver ===
+    AMD_VULKAN_ICD = "RADV";
+    FLAKE = "/home/buymymojo/etc/nixos/";
   };
 
   # This value determines the NixOS release from which the default
