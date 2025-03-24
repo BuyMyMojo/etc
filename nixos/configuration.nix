@@ -2,7 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, unstable, ... }:
+{
+  config,
+  pkgs,
+  unstable,
+  inputs,
+  ...
+}:
 
 # let
 #   berkeley-mono-typeface = pkgs.callPackage ./packages/berkeley-mono-typeface.nix;
@@ -17,7 +23,13 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    inputs.ucodenix.nixosModules.default
   ];
+
+  services.ucodenix = {
+    enable = true;
+    cpuModelId = "00A20F12"; # AMD 5900X
+  };
 
   # Use the latest linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -163,51 +175,54 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; with unstable; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-    fzf
-    nixfmt-rfc-style
-    dwarfs
+  environment.systemPackages =
+    with pkgs;
+    with unstable;
+    [
+      #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      #  wget
+      fzf
+      nixfmt-rfc-style
+      dwarfs
 
-    wineWowPackages.stable
-    winetricks
-    steamtinkerlaunch
+      wineWowPackages.stable
+      winetricks
+      steamtinkerlaunch
 
-    amdgpu_top
-    mangohud
+      amdgpu_top
+      mangohud
 
-    unstable.svt-av1-psy
-    unstable.ffmpeg-full
-    unstable.ab-av1
-    unstable.whisper-cpp-vulkan
+      unstable.svt-av1-psy
+      unstable.ffmpeg-full
+      unstable.ab-av1
+      unstable.whisper-cpp-vulkan
 
-    vscode.fhs # .fhs version will be more compatable even if slightly less nix flavoured
+      vscode.fhs # .fhs version will be more compatable even if slightly less nix flavoured
 
-    openrazer-daemon
+      openrazer-daemon
 
-    # === nix related ===
-    comma
-    nh
-    # === nix related ===
+      # === nix related ===
+      comma
+      nh
+      # === nix related ===
 
-    rustc
-    cargo
-    go
-    pnpm
-    zig
-    maven
-    gradle
-    gcc
+      rustc
+      cargo
+      go
+      pnpm
+      zig
+      maven
+      gradle
+      gcc
 
-    # noisetorch
-    # yad
-    # unzip
-    # wget
-    # xdotool
-    # xxd
-    # xorg.xwininfo
-  ];
+      # noisetorch
+      # yad
+      # unzip
+      # wget
+      # xdotool
+      # xxd
+      # xorg.xwininfo
+    ];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [

@@ -7,6 +7,9 @@
 
     home-manger.url = "github:nix-community/home-manager";
     home-manger.inputs.nixpkgs.follows = "nixpkgs";
+
+    # CPU microcode updater
+    ucodenix.url = "github:e-tho/ucodenix";
   };
 
   outputs =
@@ -19,6 +22,7 @@
 
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {
+          inherit inputs;
           pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
@@ -31,6 +35,7 @@
         modules = [
           ./configuration.nix
         ];
+
       };
 
     };

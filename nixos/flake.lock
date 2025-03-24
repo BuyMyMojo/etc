@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "cpu-microcodes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1742753109,
+        "narHash": "sha256-hneAwNElAMkaTdToS6DUa47gFkXoIIR77CesMKUW21A=",
+        "owner": "platomav",
+        "repo": "CPUMicrocodes",
+        "rev": "f093bec842057ebf35d0525fcd69f649714f4485",
+        "type": "github"
+      },
+      "original": {
+        "owner": "platomav",
+        "repo": "CPUMicrocodes",
+        "rev": "f093bec842057ebf35d0525fcd69f649714f4485",
+        "type": "github"
+      }
+    },
     "home-manger": {
       "inputs": {
         "nixpkgs": [
@@ -40,7 +57,26 @@
       "inputs": {
         "home-manger": "home-manger",
         "nixpkgs": "nixpkgs",
+        "ucodenix": "ucodenix",
         "unstable": "unstable"
+      }
+    },
+    "ucodenix": {
+      "inputs": {
+        "cpu-microcodes": "cpu-microcodes"
+      },
+      "locked": {
+        "lastModified": 1742827057,
+        "narHash": "sha256-eRUBUdKGKHxCTPkF6zoQsIKPdu58AkiPU0bxX8nuRoQ=",
+        "owner": "e-tho",
+        "repo": "ucodenix",
+        "rev": "1e8747f89ed13826cd7698be5a559bdbc50258fe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "e-tho",
+        "repo": "ucodenix",
+        "type": "github"
       }
     },
     "unstable": {
