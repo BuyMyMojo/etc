@@ -11,21 +11,23 @@
 
   outputs =
     { nixpkgs, unstable, ... }@inputs:
-    # let
-    #   system = "x86_64-linux";
-    #   pkgs = import nixpkgs {
-    #     inherit system;
-    #     config.allowUnfree = true;
-    #   };
-    #   unstable = import nixpkgs-unstable {
-    #     inherit system;
-    #     config.allowUnfree = true;
-    #   };
-    # in
+    let
+      system = "x86_64-linux";
+
+    in
     {
 
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          unstable = import unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
         modules = [
           ./configuration.nix
         ];

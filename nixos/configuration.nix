@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, unstable, ... }:
 
 # let
 #   berkeley-mono-typeface = pkgs.callPackage ./packages/berkeley-mono-typeface.nix;
@@ -158,11 +158,12 @@
   programs.noisetorch.enable = true;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
+  # unstable.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; with unstable; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     fzf
@@ -176,10 +177,10 @@
     amdgpu_top
     mangohud
 
-    inputs.unstable.legacyPackages.${pkgs.system}.svt-av1-psy
-    inputs.unstable.legacyPackages.${pkgs.system}.ffmpeg-full
-    inputs.unstable.legacyPackages.${pkgs.system}.ab-av1
-    inputs.unstable.legacyPackages.${pkgs.system}.whisper-cpp-vulkan
+    unstable.svt-av1-psy
+    unstable.ffmpeg-full
+    unstable.ab-av1
+    unstable.whisper-cpp-vulkan
 
     vscode.fhs # .fhs version will be more compatable even if slightly less nix flavoured
 
