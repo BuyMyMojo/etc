@@ -2,19 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 # let
 #   berkeley-mono-typeface = pkgs.callPackage ./packages/berkeley-mono-typeface.nix;
 # in
 
-let
-  unstable = import <nixos-unstable> {
-    config = {
-      allowUnfree = true;
-    };
-  };
-in
 {
   nix.settings.experimental-features = [
     "nix-command"
@@ -183,10 +176,10 @@ in
     amdgpu_top
     mangohud
 
-    unstable.svt-av1-psy
-    unstable.ffmpeg-full
-    unstable.ab-av1
-    unstable.whisper-cpp-vulkan
+    inputs.unstable.legacyPackages.${pkgs.system}.svt-av1-psy
+    inputs.unstable.legacyPackages.${pkgs.system}.ffmpeg-full
+    inputs.unstable.legacyPackages.${pkgs.system}.ab-av1
+    inputs.unstable.legacyPackages.${pkgs.system}.whisper-cpp-vulkan
 
     vscode.fhs # .fhs version will be more compatable even if slightly less nix flavoured
 
