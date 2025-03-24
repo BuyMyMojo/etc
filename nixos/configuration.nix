@@ -186,7 +186,10 @@
 
     openrazer-daemon
 
+    # === nix related ===
     comma
+    nh
+    # === nix related ===
 
     rustc
     cargo
