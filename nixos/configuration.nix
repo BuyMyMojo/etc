@@ -181,6 +181,7 @@
       fzf
       nixfmt-rfc-style
       dwarfs
+      unrar
 
       wineWowPackages.stable
       winetricks
@@ -307,7 +308,10 @@
   environment.sessionVariables = {
     # === Prefer RADV driver ===
     AMD_VULKAN_ICD = "RADV";
+
     FLAKE = "/home/buymymojo/etc/nixos/";
+
+    MANGOHUD = "1";
   };
 
   # This value determines the NixOS release from which the default

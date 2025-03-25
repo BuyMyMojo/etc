@@ -194,7 +194,7 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-      
+
       # === amdvlk driver ===
       extraPackages = with pkgs; [
         amdvlk
