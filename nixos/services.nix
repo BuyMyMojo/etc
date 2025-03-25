@@ -27,8 +27,8 @@
 
     syncthing = {
         enable = true;
-        group = "BuyMyAria";
-        user = "BuyMyAria";
+        group = "users";
+        user = "buymymojo";
         dataDir = "/home/buymymojo/Documents/Syncthing";    # Default folder for new synced folders
         configDir = "/home/buymymojo/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
     };
