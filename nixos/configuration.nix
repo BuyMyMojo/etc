@@ -243,6 +243,7 @@
     dotnetCorePackages.dotnet_8.sdk
     dotnetCorePackages.sdk_8_0_3xx
     alsa-lib
+    icu
     # === Godot ===
 
     # === Ludusavi ===
@@ -312,6 +313,8 @@
     FLAKE = "/home/buymymojo/etc/nixos/";
 
     MANGOHUD = "1";
+
+    DOTNET_SYSTEM_GLOBALIZATION_INVARIANT = "1"; # Fixes godot 4 mono's launch issues
   };
 
   # This value determines the NixOS release from which the default
