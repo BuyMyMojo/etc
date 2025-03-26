@@ -196,7 +196,7 @@
       # === vulkan/mesa ===
       enable = true;
       enable32Bit = true;
-      package = unstable.mesa;
+      # package = unstable.mesa;
       # === vulkan/mesa ===
 
       # === amdvlk driver ===
