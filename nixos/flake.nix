@@ -13,7 +13,11 @@
   };
 
   outputs =
-    { nixpkgs, unstable, ... }@inputs:
+    {
+      nixpkgs,
+      unstable,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
 

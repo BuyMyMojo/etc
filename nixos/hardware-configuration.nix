@@ -6,6 +6,7 @@
   lib,
   pkgs,
   modulesPath,
+  unstable,
   ...
 }:
 
@@ -192,8 +193,11 @@
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware = {
     graphics = {
+      # === vulkan/mesa ===
       enable = true;
       enable32Bit = true;
+      package = unstable.mesa;
+      # === vulkan/mesa ===
 
       # === amdvlk driver ===
       extraPackages = with pkgs; [
