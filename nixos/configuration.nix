@@ -26,8 +26,6 @@
     inputs.ucodenix.nixosModules.default
   ];
 
-
-
   # Use the latest linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -266,7 +264,6 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  
 
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
