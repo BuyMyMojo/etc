@@ -182,6 +182,7 @@
       nixfmt-rfc-style
       dwarfs
       unrar
+      mpv
 
       wineWowPackages.stable
       winetricks
