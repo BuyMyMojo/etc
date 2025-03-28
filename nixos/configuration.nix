@@ -211,6 +211,7 @@
       maven
       gradle
       gcc
+      dotnetCorePackages.sdk_8_0_3xx
 
       # noisetorch
       # yad
@@ -239,7 +240,6 @@
     libxkbcommon
     dbus
     libpulseaudio
-    dotnetCorePackages.dotnet_8.sdk
     dotnetCorePackages.sdk_8_0_3xx
     alsa-lib
     icu
