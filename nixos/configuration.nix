@@ -178,12 +178,13 @@
       #  wget
       fzf
       nixfmt-rfc-style
-      dwarfs
+      unstable.dwarfs
       unrar
       mpv
+      unstable.waypipe
 
-      wineWowPackages.stable
-      winetricks
+      unstable.wineWowPackages.waylandFull
+      unstable.winetricks
       steamtinkerlaunch
 
       amdgpu_top
