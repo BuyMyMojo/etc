@@ -46,19 +46,24 @@
   # Set your time zone.
   time.timeZone = "Australia/Melbourne";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
+  i18n = {
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_AU.UTF-8";
-    LC_IDENTIFICATION = "en_AU.UTF-8";
-    LC_MEASUREMENT = "en_AU.UTF-8";
-    LC_MONETARY = "en_AU.UTF-8";
-    LC_NAME = "en_AU.UTF-8";
-    LC_NUMERIC = "en_AU.UTF-8";
-    LC_PAPER = "en_AU.UTF-8";
-    LC_TELEPHONE = "en_AU.UTF-8";
-    LC_TIME = "en_AU.UTF-8";
+  # Select internationalisation properties.
+    defaultLocale = "C.UTF-8";
+
+    extraLocaleSettings = {
+      LC_ADDRESS = "C.UTF-8";
+      LC_IDENTIFICATION = "C.UTF-8";
+      LC_MEASUREMENT = "C.UTF-8";
+      LC_MONETARY = "C.UTF-8";
+      LC_NAME = "C.UTF-8";
+      LC_NUMERIC = "C.UTF-8";
+      LC_PAPER = "C.UTF-8";
+      LC_TELEPHONE = "C.UTF-8";
+      LC_TIME = "C.UTF-8";
+    };
+
+    supportedLocales = [ "all" ];
   };
 
   # Enable the X11 windowing system.
@@ -113,6 +118,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "video"
       "docker"
       "openrazer"
       "gamemode"
@@ -138,6 +144,11 @@
   programs.firefox.enable = true;
   programs.thunderbird.enable = true;
   programs.fish.enable = true;
+
+  programs.gpu-screen-recorder = {
+    enable = true;
+    package = unstable.gpu-screen-recorder;
+  };
 
   programs.corectrl = {
     enable = true;
