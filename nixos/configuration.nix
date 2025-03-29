@@ -175,9 +175,9 @@
   programs.steam = {
     enable = true;
     package = pkgs.steam.override {
-      extraPkgs = (pkgs: with pkgs; [
+      extraPkgs = (pkgs: with pkgs; with unstable; [
         gamemode
-        mangohud
+        unstable.mangohud
         # additional packages...
         # e.g. some games require python3
       ]);
