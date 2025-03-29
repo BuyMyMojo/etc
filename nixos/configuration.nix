@@ -193,10 +193,7 @@
       unrar
       mpv
       unstable.waypipe
-
-      unstable.wineWowPackages.waylandFull
-      unstable.winetricks
-      steamtinkerlaunch
+      unstable.nix-your-shell
 
       amdgpu_top
       mangohud
