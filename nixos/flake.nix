@@ -10,12 +10,19 @@
 
     # CPU microcode updater
     ucodenix.url = "github:e-tho/ucodenix";
+
+    nix-your-shell = {
+      url = "github:MercuryTechnologies/nix-your-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
     {
       nixpkgs,
       unstable,
+      nix-your-shell,
       ...
     }@inputs:
     let
@@ -35,6 +42,8 @@
             inherit system;
             config.allowUnfree = true;
           };
+
+          inherit nix-your-shell;
         };
         modules = [
           ./configuration.nix

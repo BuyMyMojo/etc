@@ -7,6 +7,7 @@
   pkgs,
   unstable,
   inputs,
+  nix-your-shell,
   ...
 }:
 
@@ -15,6 +16,10 @@
 # in
 
 {
+  nixpkgs.overlays = [
+    nix-your-shell.overlays.default
+  ];
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -143,7 +148,13 @@
 
   programs.firefox.enable = true;
   programs.thunderbird.enable = true;
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      nix-your-shell fish | source
+    '';
+  };
+
 
   programs.gpu-screen-recorder = {
     enable = true;
