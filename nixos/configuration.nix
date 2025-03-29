@@ -33,6 +33,9 @@
 
   # Use the latest linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = unstable.linuxPackages_xanmod_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_6_14;
+  # boot.kernelPackages = pkgs.linuxPackages_6_13;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
