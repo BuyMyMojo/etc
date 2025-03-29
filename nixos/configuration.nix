@@ -207,7 +207,7 @@
       unstable.nix-your-shell
 
       amdgpu_top
-      mangohud
+      # unstable.mangohud
 
       unstable.svt-av1-psy
       unstable.ffmpeg-full
