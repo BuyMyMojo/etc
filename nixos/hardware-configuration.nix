@@ -205,11 +205,9 @@
       enable = true;
       support32Bit.enable = true;
     };
-      # === amdvlk driver ===
+    # === amdvlk driver ===
 
-    };
-
-    openrazer.enable = true;
+    # openrazer.enable = true;
 
   };
 }

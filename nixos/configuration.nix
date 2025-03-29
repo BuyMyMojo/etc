@@ -56,7 +56,7 @@
 
   i18n = {
 
-  # Select internationalisation properties.
+    # Select internationalisation properties.
     defaultLocale = "C.UTF-8";
 
     extraLocaleSettings = {
@@ -230,7 +230,7 @@
 
       vscode.fhs # .fhs version will be more compatable even if slightly less nix flavoured
 
-      openrazer-daemon
+      # unstable.openrazer-daemon # Broken, enable again in a few days?
 
       # === nix related ===
       comma
