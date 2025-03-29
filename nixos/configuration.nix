@@ -186,6 +186,8 @@
   };
   programs.steam.gamescopeSession.enable = true;
   programs.steam.protontricks.enable = true;
+  hardware.steam-hardware.enable = true;
+  programs.gamescope.enable = true;
   programs.gamemode.enable = true;
 
   programs.gnupg.agent = {
