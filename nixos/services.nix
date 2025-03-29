@@ -8,6 +8,15 @@
 
 {
 
+  systemd.services.jellyfin-rpc = {
+    enable = disable;
+    path = [ pkgs.jellyfin-rpc ];
+    serviceConfig = {
+      User = "buymymojo";
+      ExecStart = "${pkgs.nix}/bin/nix run nixpkgs#jellyfin-rpc";
+    };
+  };
+
   services = {
     openssh.enable = true;
     flatpak.enable = true;
