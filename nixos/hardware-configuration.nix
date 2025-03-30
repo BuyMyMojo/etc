@@ -26,7 +26,7 @@
   ];
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
-  # boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
+  boot.kernelParams = [ "microcode.amd_sha_check=off" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
