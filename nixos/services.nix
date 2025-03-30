@@ -9,7 +9,7 @@
 {
 
   systemd.services.jellyfin-rpc = {
-    enable = disable;
+    enable = false;
     path = [ pkgs.jellyfin-rpc ];
     serviceConfig = {
       User = "buymymojo";
