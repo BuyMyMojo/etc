@@ -217,6 +217,7 @@
       unstable.dwarfs
       unrar
       mpv
+pkgs.clamav
       unstable.waypipe
       unstable.nix-your-shell
 

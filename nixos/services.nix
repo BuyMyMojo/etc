@@ -42,6 +42,18 @@
       configDir = "/home/buymymojo/Documents/.config/syncthing"; # Folder for Syncthing's settings and keys
     };
 
+    clamav = {
+      daemon.enable = true;
+      daemon.settings = {
+        MaxThreads = 16;
+      };
+      updater.enable = true;
+      updater.interval = "weekly";
+      updater.settings = {
+        CompressLocalDatabase = true;
+      };
+    };
+
     # services.blocky = {
     #   enable = true;
     #   settings = {
