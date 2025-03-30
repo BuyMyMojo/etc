@@ -216,8 +216,8 @@
       nixfmt-rfc-style
       unstable.dwarfs
       unrar
-      mpv
-pkgs.clamav
+      unstable.mpv
+      pkgs.clamav
       unstable.waypipe
       unstable.nix-your-shell
 
