@@ -46,7 +46,29 @@
           inherit nix-your-shell;
         };
         modules = [
+          ./universal.nix
           ./configuration.nix
+          ./services.nix
+        ];
+
+      };
+
+      nixosConfigurations.low-power-laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          unstable = import unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+
+          inherit nix-your-shell;
+        };
+        modules = [
+          ./universal.nix
           ./services.nix
         ];
 

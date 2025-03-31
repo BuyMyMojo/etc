@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
   config,
   pkgs,
@@ -11,19 +7,7 @@
   ...
 }:
 
-# let
-#   berkeley-mono-typeface = pkgs.callPackage ./packages/berkeley-mono-typeface.nix;
-# in
-
 {
-  nixpkgs.overlays = [
-    nix-your-shell.overlays.default
-  ];
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   imports = [
     # Include the results of the hardware scan.
@@ -50,9 +34,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Australia/Melbourne";
 
   i18n = {
 
@@ -110,15 +91,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  fonts = {
-    fontDir.enable = true;
-    enableGhostscriptFonts = true;
-    packages = with pkgs; [
-      nerdfonts
-      # berkeley-mono-typeface
-    ];
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.buymymojo = {
     isNormalUser = true;
@@ -149,14 +121,7 @@
     package = pkgs.zulu23;
   };
 
-  programs.firefox.enable = true;
   programs.thunderbird.enable = true;
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      nix-your-shell fish | source
-    '';
-  };
 
 
   programs.gpu-screen-recorder = {
@@ -192,11 +157,6 @@
   hardware.steam-hardware.enable = true;
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
 
   programs.noisetorch.enable = true;
 
@@ -348,15 +308,7 @@
     ];
   };
 
-  programs.bash = {
-    interactiveShellInit = ''
-      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-      fi
-    '';
-  };
+  
 
   # environment.variables = {
   # };
