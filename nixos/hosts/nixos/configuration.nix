@@ -268,6 +268,13 @@
     util-linux
     xz
     systemd
+
+    # === jpegqs & jpeg2png ===
+    mozjpeg
+    libjpeg
+    libjpeg8
+    libpng
+    # === jpegqs & jpeg2png ===
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
