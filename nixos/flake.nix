@@ -47,8 +47,8 @@
         };
         modules = [
           ./universal.nix
-          ./configuration.nix
-          ./services.nix
+          ./hosts/nixos/configuration.nix
+          ./hosts/nixos/services.nix
         ];
 
       };
@@ -69,7 +69,6 @@
         };
         modules = [
           ./universal.nix
-          ./services.nix
         ];
 
       };
