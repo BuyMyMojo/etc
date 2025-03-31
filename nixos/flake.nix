@@ -27,7 +27,6 @@
     }@inputs:
     let
       system = "x86_64-linux";
-
     in
     {
 
@@ -37,6 +36,7 @@
           pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
+            overlays = [ nix-your-shell.overlays.default ];
           };
           unstable = import unstable {
             inherit system;
@@ -44,6 +44,7 @@
           };
 
           inherit nix-your-shell;
+
         };
         modules = [
           ./universal.nix
@@ -59,6 +60,7 @@
           pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
+            overlays = [ nix-your-shell.overlays.default ];
           };
           unstable = import unstable {
             inherit system;
@@ -66,6 +68,7 @@
           };
 
           inherit nix-your-shell;
+
         };
         modules = [
           ./universal.nix

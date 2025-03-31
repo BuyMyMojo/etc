@@ -8,9 +8,6 @@
 }:
 
 {
-  nixpkgs.overlays = [
-    nix-your-shell.overlays.default
-  ];
 
   nix.settings.experimental-features = [
     "nix-command"
