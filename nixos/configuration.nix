@@ -247,7 +247,10 @@
       gradle
       gcc
       dotnetCorePackages.sdk_8_0_3xx
-
+      (pkgs.writeShellScriptBin "python" ''
+      export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+      exec ${pkgs.python312}/bin/python "$@"
+      '')
       # noisetorch
       # yad
       # unzip
@@ -286,6 +289,25 @@
     glib
     glibc
     # === Ludusavi ===
+
+    # === html wallpaper ===
+    python312Packages.pyqt6-webengine
+    # ===
+
+    zlib
+    zstd
+    stdenv.cc.cc
+    curl
+    openssl
+    attr
+    libssh
+    bzip2
+    libxml2
+    acl
+    libsodium
+    util-linux
+    xz
+    systemd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
