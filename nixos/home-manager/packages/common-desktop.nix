@@ -22,15 +22,9 @@ in
     inputs.moonlight.homeModules.default
   ];
 
-  nixpkgs = {
-    overlays = [
-      inputs.moonlight.overlays.default
-    ];
-  };
-
   home.packages =
-    with unstable;
     with inputs;
+    with unstable;
     [
       pkgs.yubioath-flutter
       pkgs.qbittorrent
@@ -50,15 +44,16 @@ in
       pkgs.jetbrains.webstorm
       pkgs.jetbrains.rider
       pkgs.jetbrains.idea-community
-      # unstable.neovim
+      vscode.fhs # .fhs version will be more compatable even if slightly less nix flavoured
       # === Editors/Office ===
 
       # === Media ===
       unstable.gimp
       unstable.krita
-      # pkgs.mpv
+      unstable.mpv
       unstable.losslesscut-bin
       unstable.jellyfin-media-player
+      unstable.makemkv
       # === Media ===
 
       unstable.orca-slicer

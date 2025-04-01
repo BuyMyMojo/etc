@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+
+  mports = [
+    ./packages/common-cli.nix
+    ./packages/common-desktop.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "aria";
@@ -68,7 +74,7 @@
   #  /etc/profiles/per-user/aria/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

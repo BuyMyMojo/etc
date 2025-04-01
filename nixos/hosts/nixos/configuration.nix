@@ -172,14 +172,8 @@
     [
       #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       #  wget
-      fzf
       nixfmt-rfc-style
-      unstable.dwarfs
-      unrar
-      unstable.mpv
       pkgs.clamav
-      unstable.waypipe
-      unstable.nix-your-shell
 
       amdgpu_top
       # unstable.mangohud
@@ -189,14 +183,7 @@
       unstable.ab-av1
       unstable.whisper-cpp-vulkan
 
-      vscode.fhs # .fhs version will be more compatable even if slightly less nix flavoured
-
       # unstable.openrazer-daemon # Broken, enable again in a few days?
-
-      # === nix related ===
-      comma
-      nh
-      # === nix related ===
 
       rustc
       cargo
@@ -219,63 +206,6 @@
       # xxd
       # xorg.xwininfo
     ];
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # === Godot ===
-    xorg.libXcursor
-    xorg.libXinerama
-    xorg.libXext
-    xorg.libXrandr
-    xorg.libXrender
-    xorg.libX11
-    xorg.libXi
-    libGL
-    wayland
-    wayland-scanner
-    vulkan-loader
-    fontconfig
-    libxkbcommon
-    dbus
-    libpulseaudio
-    dotnetCorePackages.sdk_8_0_3xx
-    alsa-lib
-    icu
-    # === Godot ===
-
-    # === Ludusavi ===
-    gtk3
-    gtk4
-    glib
-    glibc
-    # === Ludusavi ===
-
-    # === html wallpaper ===
-    python312Packages.pyqt6-webengine
-    # ===
-
-    zlib
-    zstd
-    stdenv.cc.cc
-    curl
-    openssl
-    attr
-    libssh
-    bzip2
-    libxml2
-    acl
-    libsodium
-    util-linux
-    xz
-    systemd
-
-    # === jpegqs & jpeg2png ===
-    mozjpeg
-    libjpeg
-    libjpeg8
-    libpng
-    # === jpegqs & jpeg2png ===
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

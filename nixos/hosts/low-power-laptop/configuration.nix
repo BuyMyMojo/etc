@@ -82,8 +82,7 @@
     description = "Aria";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; with unstable; [
-      git
-      neovim
+
     ];
   };
 
@@ -100,7 +99,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-    unstable.nix-your-shell
+    
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -121,6 +120,18 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
+
+    environment.sessionVariables = {
+    # === Prefer RADV driver ===
+    AMD_VULKAN_ICD = "RADV";
+    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
+
+    FLAKE = "/home/aria/etc/nixos/";
+
+    MANGOHUD = "1";
+
+    DOTNET_SYSTEM_GLOBALIZATION_INVARIANT = "1"; # Fixes godot 4 mono's launch issues
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

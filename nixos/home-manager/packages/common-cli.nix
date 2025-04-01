@@ -23,10 +23,21 @@ in
   ];
 
   home.packages =
+    with pkgs;
     with unstable;
     with inputs;
     [
+      stow
+      unstable.yt-dlp
+      aria2
+      ripgrep
+      wl-clipboard
+      bat
+      btop
 
+      fzf
+      unstable.dwarfs
+      unrar
     ];
 
   programs.neovim = {
@@ -45,7 +56,6 @@ in
     userName = "BuyMyMojo";
     userEmail = "hello+git@buymymojo.net";
     lfs.enable = true;
-    signing.key = "E7B7B8D20C8753C077F9B17119AB7AA462B8AB3B";
     signing.signByDefault = true;
     extraConfig = {
       init = {
@@ -55,10 +65,10 @@ in
     };
   };
 
-  programs.bellado = {
-    enable = true;
-    enableAliases = true;
-  };
+  # programs.bellado = {
+  #   enable = true;
+  #   enableAliases = true;
+  # };
 
   programs.ssh.enable = true;
   programs.ssh.addKeysToAgent = "yes";

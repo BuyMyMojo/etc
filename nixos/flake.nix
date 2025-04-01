@@ -3,9 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
-    unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    unstable-nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    home-manger.url = "github:nix-community/home-manager";
+    home-manger.url = "github:nix-community/home-manager?ref=release-24.11";
     home-manger.inputs.nixpkgs.follows = "nixpkgs";
 
     # CPU microcode updater
@@ -18,7 +18,7 @@
 
     moonlight = {
       url = "github:moonlight-mod/moonlight"; # Add `/develop` to the flake URL to use nightly.
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "unstable-nixpkgs";
     };
 
     shadps4-git.url = "./programs/shadps4";
@@ -34,7 +34,7 @@
   outputs =
     {
       nixpkgs,
-      unstable,
+      unstable-nixpkgs,
       home-manager,
       nix-your-shell,
       nixpkgs-gsr-ui,
@@ -47,10 +47,13 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ nix-your-shell.overlays.default ];
+        overlays = [
+          nix-your-shell.overlays.default
+          inputs.moonlight.overlays.default
+        ];
       };
 
-      unstable = import unstable {
+      unstable = import unstable-nixpkgs {
         inherit system;
         config.allowUnfree = true;
       };
@@ -73,6 +76,7 @@
         };
         modules = [
           ./universal.nix
+          ./nix-ld.nix
           ./hosts/nixos/configuration.nix
           ./hosts/nixos/services.nix
 
@@ -80,12 +84,12 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.buymymojo = ./home-manager/honixos.nix;
+            home-manager.users.buymymojo = ./home-manager/nixos.nix;
             home-manager.extraSpecialArgs = {
-              inherit unstable;
-              inherit inputs;
               inherit gsr-ui;
               inherit bellado;
+              inherit inputs;
+              inherit unstable;
             };
           }
         ];
@@ -103,6 +107,7 @@
         };
         modules = [
           ./universal.nix
+          ./nix-ld.nix
           ./hosts/low-power-laptop/configuration.nix
 
           home-manager.nixosModules.home-manager

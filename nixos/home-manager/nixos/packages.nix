@@ -13,13 +13,6 @@
   home.file."jdks/zulujdk17".source = pkgs.zulu17;
   home.file."jdks/zulujdk23".source = pkgs.zulu23;
 
-  home.file."Godot/current".source = unstable.godot;
-  home.file."Godot/current-mono".source = unstable.godot-mono;
-  home.file."Godot/export-templates/current".source = unstable.godot-export-templates;
-  home.file."Godot/4.3".source = unstable.godot_4_3;
-  home.file."Godot/4.3-mono".source = unstable.godot_4_3-mono;
-  home.file."Godot/export-templates/4.3".source = unstable.godot_4_3-export-templates;
-
   home.file."bin/wine".source = unstable.wineWowPackages.waylandFull;
 
   # The home.packages option allows you to install Nix packages into your
@@ -54,16 +47,9 @@
       # === Minecraft ===
 
       # === CLI ===
-      pkgs.bat
-      pkgs.btop
       pkgs.rrsync
-      pkgs.ripgrep
-      pkgs.wl-clipboard
       pkgs.poop # Compare the performance of multiple commands with a colorful terminal user interface
       pkgs.age
-      pkgs.stow
-      unstable.yt-dlp
-      pkgs.aria2
       pkgs.jujutsu
       pkgs.lazyjj
       pkgs.biome
@@ -93,14 +79,6 @@
       pkgs.lazydocker
       pkgs.distrobox
       pkgs.boxbuddy
-
-      unstable.godot-mono
-      unstable.godot-export-templates
-      unstable.blender-hip
-      unstable.freecad-wayland
-      pkgs.unityhub
-      pkgs.material-maker
-      unstable.blockbench
 
       unstable.gpu-screen-recorder-gtk
       gsr-ui.gpu-screen-recorder-ui

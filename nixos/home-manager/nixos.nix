@@ -12,6 +12,8 @@
     ./nixos/packages.nix
     ./nixos/services.nix
 
+    ./packages/gamedev.nix
+
     ./packages/common-cli.nix
     ./packages/common-desktop.nix
   ];
@@ -62,13 +64,17 @@
   #  /etc/profiles/per-user/buymymojo/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "code";
+    EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE = "1";
   };
 
   home.sessionPath = [
     "/home/buymymojo/bin/"
   ];
+
+  programs.git = {
+    signing.key = "E7B7B8D20C8753C077F9B17119AB7AA462B8AB3B";
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

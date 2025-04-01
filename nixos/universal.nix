@@ -29,6 +29,21 @@
     ];
   };
 
+  environment.systemPackages =
+    with pkgs;
+    with unstable;
+    [
+      unstable.waypipe
+
+      # === nix related ===
+      comma
+      nh
+      # === nix related ===
+
+      unstable.nix-your-shell
+
+    ];
+
   programs.firefox.enable = true;
 
   programs.gnupg.agent = {
