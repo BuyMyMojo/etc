@@ -72,6 +72,7 @@
         };
         modules = [
           ./universal.nix
+	  ./hosts/nixos/configuration.nix
         ];
 
       };
