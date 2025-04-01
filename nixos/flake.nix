@@ -72,7 +72,7 @@
         };
         modules = [
           ./universal.nix
-	  ./hosts/nixos/configuration.nix
+	  ./hosts/low-power-laptop/configuration.nix
         ];
 
       };
