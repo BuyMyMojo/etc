@@ -2,7 +2,7 @@
 
 {
 
-  mports = [
+  imports = [
     ./packages/common-cli.nix
     ./packages/common-desktop.nix
   ];
