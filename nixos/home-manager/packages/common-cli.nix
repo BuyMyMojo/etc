@@ -65,13 +65,27 @@ in
     };
   };
 
-  # programs.bellado = {
-  #   enable = true;
-  #   enableAliases = true;
-  # };
+  programs.bellado = {
+    enable = true;
+    enableAliases = true;
+  };
 
   programs.ssh.enable = true;
   programs.ssh.addKeysToAgent = "yes";
+
+  # === ssh ===
+  programs.ssh.matchBlocks = {
+    "game2.buymymojo.net" = {
+      hostname = "game2.buymymojo.net";
+      user = "jumpbox";
+    };
+
+    "git.aria.coffee" = {
+      hostname = "git.aria.coffee";
+      user = "git";
+      port = 23;
+    };
+  };
 
   # === shells ===
   programs.bash.enable = true;

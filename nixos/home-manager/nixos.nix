@@ -76,6 +76,12 @@
     signing.key = "E7B7B8D20C8753C077F9B17119AB7AA462B8AB3B";
   };
 
+  programs.ssh.matchBlocks = {
+    "*" = {
+      identityFile = "/home/buymymojo/.ssh/id_ed25519-mainpc";
+    };
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
