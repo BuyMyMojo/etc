@@ -29,6 +29,7 @@ in
       pkgs.yubioath-flutter
       pkgs.qbittorrent
       unstable.peazip
+      unstable.parsec-bin
 
       # === Communication ===
       pkgs.vesktop
