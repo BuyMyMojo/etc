@@ -158,6 +158,8 @@
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;
 
+  programs.alvr.enable = true;
+
   programs.noisetorch.enable = true;
 
   # Allow unfree packages
