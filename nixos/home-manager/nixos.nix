@@ -13,6 +13,12 @@
     ./nixos/services.nix
 
     ./packages/gamedev.nix
+    ./packages/gaming.nix
+    ./packages/game-extras.nix
+    ./packages/emulation.nix
+    ./packages/wine.nix
+    ./packages/video-capture.nix
+    ./packages/video-prod.nix
 
     ./packages/common-cli.nix
     ./packages/common-desktop.nix

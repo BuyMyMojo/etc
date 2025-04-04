@@ -123,41 +123,6 @@
 
   programs.thunderbird.enable = true;
 
-
-  programs.gpu-screen-recorder = {
-    enable = true;
-    package = unstable.gpu-screen-recorder;
-  };
-
-  programs.corectrl = {
-    enable = true;
-    gpuOverclock = {
-      enable = true;
-      ppfeaturemask = "0xffffffff";
-    };
-  };
-
-  programs.steam = {
-    enable = true;
-    package = pkgs.steam.override {
-      extraPkgs = (pkgs: with pkgs; with unstable; [
-        gamemode
-        unstable.mangohud
-        # additional packages...
-        # e.g. some games require python3
-      ]);
-    };
-
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-  };
-  programs.steam.gamescopeSession.enable = true;
-  programs.steam.protontricks.enable = true;
-  hardware.steam-hardware.enable = true;
-  programs.gamescope.enable = true;
-  programs.gamemode.enable = true;
-
   programs.alvr.enable = true;
 
   programs.noisetorch.enable = true;
@@ -180,11 +145,6 @@
       amdgpu_top
       # unstable.mangohud
 
-      unstable.svt-av1-psy
-      unstable.ffmpeg-full
-      unstable.ab-av1
-      unstable.whisper-cpp-vulkan
-
       # unstable.openrazer-daemon # Broken, enable again in a few days?
 
       rustc
@@ -197,8 +157,8 @@
       gcc
       dotnetCorePackages.sdk_8_0_3xx
       (pkgs.writeShellScriptBin "python" ''
-      export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
-      exec ${pkgs.python312}/bin/python "$@"
+        export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+        exec ${pkgs.python312}/bin/python "$@"
       '')
       # noisetorch
       # yad
@@ -215,17 +175,6 @@
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-
-  virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "btrfs";
-  # virtualisation.docker.rootless = {
-  #   enable = true;
-  #   setSocketVariable = true;
   # };
 
   # Open ports in the firewall.
@@ -246,8 +195,6 @@
       "jellyfin.buymymojo.net"
     ];
   };
-
-  
 
   # environment.variables = {
   # };

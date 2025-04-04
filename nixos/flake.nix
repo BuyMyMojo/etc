@@ -75,8 +75,13 @@
 
         };
         modules = [
-          ./universal.nix
-          ./nix-ld.nix
+          ./common/universal.nix
+          ./common/nix-ld.nix
+          ./common/steam.nix
+          ./common/virtualisation.nix
+          ./common/corectrl.nix
+          ./common/video-capture.nix
+
           ./hosts/nixos/configuration.nix
           ./hosts/nixos/services.nix
 
@@ -106,8 +111,9 @@
 
         };
         modules = [
-          ./universal.nix
-          ./nix-ld.nix
+          ./common/universal.nix
+          ./common/nix-ld.nix
+          ./common/corectrl.nix
           ./hosts/low-power-laptop/configuration.nix
 
           home-manager.nixosModules.home-manager
