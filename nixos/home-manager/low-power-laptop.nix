@@ -79,7 +79,7 @@
 
   programs.ssh.matchBlocks = {
     "*" = {
-      identityFile = "/home/buymymojo/.ssh/id_ed25519";
+      identityFile = "/home/aria/.ssh/id_ed25519";
     };
   };
 
