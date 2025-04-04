@@ -54,7 +54,14 @@
       };
     };
 
-    # services.blocky = {
+    tailscale.enable = true;
+
+    tailscale.extraSetFlags = [
+      "--advertise-exit-node"
+      "--exit-node-allow-lan-access"
+    ];
+
+    # blocky = {
     #   enable = true;
     #   settings = {
     #     ports.dns = 53; # Port for incoming DNS Queries.
