@@ -17,13 +17,12 @@ let
     '';
 in
 {
+  home.file."bin/wine".source = unstable.wineWowPackages.waylandFull;
 
   home.packages =
     with unstable;
     with inputs;
     [
-      home.file."bin/wine".source = unstable.wineWowPackages.waylandFull;
-      
       unstable.wineWowPackages.waylandFull
       unstable.winetricks
     ];
