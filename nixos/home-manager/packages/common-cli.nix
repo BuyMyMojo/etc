@@ -85,6 +85,11 @@ in
       user = "git";
       port = 23;
     };
+
+    "vtt.buymymojo.net" = {
+    	hostname = "vtt.buymymojo.net";
+	user = "admin";
+    };
   };
 
   # === shells ===
