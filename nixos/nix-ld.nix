@@ -63,5 +63,9 @@
     libjpeg8
     libpng
     # === jpegqs & jpeg2png ===
+
+    # === 3d printing ===
+    xorg.libxcb
+    # === 3d printing ===
   ];
 }
