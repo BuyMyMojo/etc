@@ -1,3 +1,0 @@
---target=/etc/nixos
---ignore=.stowrc
---ignore=DS_Store
