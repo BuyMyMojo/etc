@@ -2,7 +2,6 @@
   config,
   pkgs,
   unstable,
-  gsr-ui,
   inputs,
   ...
 }:

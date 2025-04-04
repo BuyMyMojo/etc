@@ -4,6 +4,7 @@
   unstable,
   inputs,
   lib,
+  gsr-ui,
   ...
 }:
 
