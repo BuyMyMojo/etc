@@ -17,6 +17,7 @@
     ./packages/game-extras.nix
     ./packages/emulation.nix
     ./packages/wine.nix
+    ./packages/virtualisation.nix
     ./packages/video-capture.nix
     ./packages/video-prod.nix
 
