@@ -54,7 +54,11 @@
       };
     };
 
-    tailscale.enable = true;
+    tailscale = {
+      enable = true;
+      useRoutingFeatures = "both";
+      package = unstable.tailscale;
+    };
 
     # tailscale.extraSetFlags = [
     #   "--advertise-exit-node"
@@ -63,16 +67,14 @@
 
     resolved = {
       enable = true;
-      dnssec = "true";
-      domains = [ "~." ];
+      # dnssec = "true";
+      # domains = [ "~." ];
       fallbackDns = [
         "1.1.1.1#one.one.one.one"
         "1.0.0.1#one.one.one.one"
       ];
       dnsovertls = "true";
     };
-
-
 
     # blocky = {
     #   enable = true;

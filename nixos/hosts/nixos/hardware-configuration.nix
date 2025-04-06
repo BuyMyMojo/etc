@@ -189,13 +189,20 @@
   # networking.interfaces.enp6s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp5s0.useDHCP = lib.mkDefault true;
 
-  systemd.network.enable = true;
+
+  networking.useNetworkd = true;
+  networking.useDHCP = false;
+  networking.interfaces.enp4s0.useDHCP = true;
+  networking.interfaces.enp6s0.useDHCP = true;
+  networking.interfaces.tailscale0.useDHCP = false;
+  networking.nftables.enable = true;
 
   networking.nameservers = [
     "1.1.1.1#one.one.one.one"
     "1.0.0.1#one.one.one.one"
   ];
 
+  # systemd.network.enable = false;
   systemd.network.networks."10-wan" = {
     # match the interface by name
     matchConfig.Name = "enp4s0";
