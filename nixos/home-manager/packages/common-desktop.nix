@@ -34,6 +34,7 @@ in
       # === Communication ===
       pkgs.vesktop
       pkgs.discord-canary
+      pkgs.discord
       pkgs.signal-desktop
       pkgs.telegram-desktop
       # pkgs.thunderbird-latest-unwrapped
