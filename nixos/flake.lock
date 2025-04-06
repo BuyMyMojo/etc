@@ -327,11 +327,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-rADqSJu492bURPi5fmvPyeG1B5bV3k2hfGR+VfHn1Ig=",
-        "path": "/nix/store/0ijaxggxca21kyv5qi8ndbmfnr8s40f7-source/nixos/programs/shadps4",
+        "path": "/nix/store/1wdk50abjwp8dcz1zjp0ax95312q723w-source/nixos/programs/shadps4",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/0ijaxggxca21kyv5qi8ndbmfnr8s40f7-source/nixos/programs/shadps4",
+        "path": "/nix/store/1wdk50abjwp8dcz1zjp0ax95312q723w-source/nixos/programs/shadps4",
         "type": "path"
       }
     },
