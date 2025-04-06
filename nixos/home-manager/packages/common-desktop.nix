@@ -50,7 +50,7 @@ in
       # === Editors/Office ===
 
       # === Media ===
-      unstable.gimp
+      # unstable.gimp
       unstable.krita
       unstable.mpv
       unstable.losslesscut-bin
