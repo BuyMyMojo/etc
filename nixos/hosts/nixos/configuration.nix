@@ -103,6 +103,7 @@
       "openrazer"
       "gamemode"
       "corectrl"
+      "cdrom"
     ];
     # packages = with pkgs; [
     #   # discord.override { withMoonlight = true; }
@@ -143,7 +144,7 @@
       pkgs.clamav
 
       amdgpu_top
-      # unstable.mangohud
+      pkgs.mangohud
 
       # unstable.openrazer-daemon # Broken, enable again in a few days?
 
@@ -156,10 +157,10 @@
       gradle
       gcc
       dotnetCorePackages.sdk_8_0_3xx
-      (pkgs.writeShellScriptBin "python" ''
-        export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
-        exec ${pkgs.python312}/bin/python "$@"
-      '')
+      # (pkgs.writeShellScriptBin "python" ''
+      #   export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+      #   exec ${pkgs.python312}/bin/python "$@"
+      # '')
       # noisetorch
       # yad
       # unzip
@@ -167,6 +168,8 @@
       # xdotool
       # xxd
       # xorg.xwininfo
+
+      (ffmpeg-full.override {svt-av1 = pkgs.svt-av1-psy;})
     ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -208,7 +211,7 @@
 
     MANGOHUD = "1";
 
-    DOTNET_SYSTEM_GLOBALIZATION_INVARIANT = "1"; # Fixes godot 4 mono's launch issues
+    # DOTNET_SYSTEM_GLOBALIZATION_INVARIANT = "1"; # Fixes godot 4 mono's launch issues
   };
 
   # This value determines the NixOS release from which the default

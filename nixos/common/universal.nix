@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   unstable,
   inputs,
   nix-your-shell,
@@ -23,24 +24,21 @@
   fonts = {
     fontDir.enable = true;
     enableGhostscriptFonts = true;
-    packages = with pkgs; [
-      nerdfonts
-      # berkeley-mono-typeface
-    ];
+    packages = [ ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
   };
 
   environment.systemPackages =
     with pkgs;
     with unstable;
     [
-      unstable.waypipe
+      waypipe
 
       # === nix related ===
       comma
       nh
       # === nix related ===
 
-      unstable.nix-your-shell
+      # nix-your-shell
 
     ];
 
@@ -53,9 +51,9 @@
 
   programs.fish = {
     enable = true;
-    interactiveShellInit = ''
-      nix-your-shell fish | source
-    '';
+    # interactiveShellInit = ''
+    #   nix-your-shell fish | source
+    # '';
   };
 
   programs.bash = {

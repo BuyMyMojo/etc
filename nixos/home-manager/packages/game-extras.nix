@@ -19,13 +19,14 @@ in
 {
 
   home.packages =
+    with pkgs;
     with unstable;
     with inputs;
     [
       # === Factorio related ===
-      unstable.yafc-ce
-      unstable.pactorio
-      unstable.factoriolab
+      yafc-ce
+      pactorio
+      factoriolab
       # === Factorio related ===
     ];
 }

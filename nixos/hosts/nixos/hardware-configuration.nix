@@ -189,7 +189,6 @@
   # networking.interfaces.enp6s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp5s0.useDHCP = lib.mkDefault true;
 
-
   networking.useNetworkd = true;
   networking.useDHCP = false;
   networking.interfaces.enp4s0.useDHCP = true;
@@ -217,14 +216,17 @@
     linkConfig.RequiredForOnline = "routable";
   };
 
-  systemd.network.networks."20-work-line" = {
+    systemd.network.networks."20-work-wan" = {
     # match the interface by name
     matchConfig.Name = "enp6s0";
-    networkConfig = {
-      # start a DHCP Client for IPv4 Addressing/Routing
-      DHCP = "ipv4";
-    };
-    # make routing on this interface a dependency for network-online.target
+    address = [
+      # configure addresses including subnet mask
+      "192.168.128.165/24"
+    ];
+    routes = [
+      { Gateway = "192.168.128.1"; }
+    ];
+    # make the routes on this interface a dependency for network-online.target
     linkConfig.RequiredForOnline = "routable";
   };
 
@@ -235,6 +237,8 @@
       # === vulkan/mesa ===
       enable = true;
       enable32Bit = true;
+      extraPackages = with pkgs; with unstable; [ pkgs.mangohud ];
+      extraPackages32 = with pkgs; with unstable; [ pkgs.mangohud ];
       # package = unstable.mesa;
       # === vulkan/mesa ===
 

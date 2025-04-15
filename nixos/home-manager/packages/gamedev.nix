@@ -26,14 +26,15 @@ in
   home.file."Godot/export-templates/4.3".source = unstable.godot_4_3-export-templates;
 
   home.packages =
+    with pkgs;
     with unstable;
     with inputs;
     [
-      unstable.godot-mono
+      unstable.godot
       unstable.godot-export-templates
       unstable.blender-hip
       unstable.freecad-wayland
-      pkgs.unityhub
+      unstable.unityhub
       pkgs.material-maker
       unstable.blockbench
     ];

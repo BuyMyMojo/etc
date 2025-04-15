@@ -25,6 +25,7 @@ in
   # === Java versions for MC ===
 
   home.packages =
+    with pkgs;
     with unstable;
     with inputs;
     [
@@ -33,19 +34,25 @@ in
       unstable.prismlauncher
       # === Minecraft related ===
 
-      unstable.steamtinkerlaunch
-      pkgs.heroic-unwrapped
-      unstable.ludusavi
+      steamtinkerlaunch
+      heroic
+      xivlauncher
+      ludusavi
 
       # === Game perf ===
-      unstable.mangojuice
-      unstable.goverlay
+      mangojuice
+      goverlay
+      # unstable.mangohud
       # === Game perf ===
+
+      # === Modding ===
+      unstable.nexusmods-app-unfree
+      # === Modding ===
     ];
 
-  programs.mangohud = {
-    enable = true;
-    enableSessionWide = true;
-    package = unstable.mangohud;
-  };
+  # programs.mangohud = {
+  #  enable = true;
+  #  enableSessionWide = true;
+  #   package = unstable.mangohud;
+  # };
 }

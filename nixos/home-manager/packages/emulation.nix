@@ -19,13 +19,14 @@ in
 {
 
   home.packages =
+    with pkgs;
     with unstable;
     with inputs;
     [
-      unstable.pcsx2
-      unstable.rpcs3
-      unstable.ryubing
-      unstable.torzu
+      pcsx2
+      rpcs3
+      ryubing
+      torzu
       inputs.shadps4-git.packages."x86_64-linux".default
     ];
 }

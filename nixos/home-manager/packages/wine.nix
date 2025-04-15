@@ -20,6 +20,7 @@ in
   home.file."bin/wine".source = unstable.wineWowPackages.waylandFull;
 
   home.packages =
+    with pkgs;
     with unstable;
     with inputs;
     [

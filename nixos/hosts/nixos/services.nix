@@ -60,10 +60,11 @@
       package = unstable.tailscale;
     };
 
-    # tailscale.extraSetFlags = [
-    #   "--advertise-exit-node"
-    #   "--exit-node-allow-lan-access"
-    # ];
+    tailscale.extraSetFlags = [
+      "--advertise-exit-node"
+      "--exit-node-allow-lan-access"
+      "--ssh"
+    ];
 
     resolved = {
       enable = true;

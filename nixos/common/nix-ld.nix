@@ -29,6 +29,7 @@
     dotnetCorePackages.sdk_8_0_3xx
     alsa-lib
     icu
+    haskellPackages.bz2
     # === Godot ===
 
     # === Ludusavi ===

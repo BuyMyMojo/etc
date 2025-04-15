@@ -18,30 +18,31 @@ let
 in
 {
 
-  imports = [
-    inputs.moonlight.homeModules.default
-  ];
+#  imports = [
+#    inputs.moonlight.homeModules.default
+#  ];
 
   home.packages =
+    with pkgs;
     with inputs;
     with unstable;
     [
       pkgs.yubioath-flutter
       pkgs.qbittorrent
-      unstable.peazip
-      unstable.parsec-bin
+      peazip
+      parsec-bin
 
       # === Communication ===
       pkgs.vesktop
-      pkgs.discord-canary
-      pkgs.discord
+      # (unstable.discord-canary.override { withMoonlight = true; })
+      # (unstable.discord.override { withMoonlight = true; })
       pkgs.signal-desktop
       pkgs.telegram-desktop
       # pkgs.thunderbird-latest-unwrapped
       # === Communication ===
 
       # === Editors/Office ===
-      unstable.libreoffice-fresh
+      libreoffice-fresh
       # pkgs.kdePackages.kate
       pkgs.jetbrains.webstorm
       pkgs.jetbrains.rider
@@ -51,18 +52,19 @@ in
 
       # === Media ===
       # unstable.gimp
-      unstable.krita
-      unstable.mpv
-      unstable.losslesscut-bin
-      unstable.jellyfin-media-player
-      unstable.makemkv
+      krita
+      mpv
+      losslesscut-bin
+      jellyfin-media-player
+      makemkv
+      kdePackages.k3b
       # === Media ===
 
-      unstable.orca-slicer
+      orca-slicer
     ];
 
-  programs.moonlight-mod = {
-    enable = true;
+#  programs.moonlight-mod = {
+#    enable = true;
     # stable = {
     #   extensions = {
     #     allActivites.enabled = true;
@@ -77,6 +79,6 @@ in
     #     };
     #   };
     # };
-  };
+#  };
 
 }

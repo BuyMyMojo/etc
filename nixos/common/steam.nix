@@ -11,13 +11,18 @@
   programs.steam = {
     enable = true;
     package = pkgs.steam.override {
+      extraEnv = {
+        MANGOHUD = true;
+        OBS_VKCAPTURE = true;
+        # RADV_TEX_ANISO = 16;
+      };
       extraPkgs = (
         pkgs:
         with pkgs;
         with unstable;
         [
           gamemode
-          unstable.mangohud
+          pkgs.mangohud
           # additional packages...
           # e.g. some games require python3
         ]

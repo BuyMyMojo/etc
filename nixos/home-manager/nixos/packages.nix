@@ -11,27 +11,28 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages =
+    with pkgs;
     with unstable;
     with inputs;
     [
       pkgs.nextcloud-client
       pkgs.xpipe
       pkgs.monero-gui
-      unstable.kiwix
+      kiwix
 
       # === CLI ===
       pkgs.rrsync
       pkgs.poop # Compare the performance of multiple commands with a colorful terminal user interface
       pkgs.age
-      pkgs.jujutsu
-      pkgs.lazyjj
+      # pkgs.jujutsu
+      # pkgs.lazyjj
       pkgs.biome
       # === CLI ===
 
       # === Image CLI ===
-      unstable.oxipng
-      unstable.image_optim
-      unstable.jpegoptim
+      oxipng
+      image_optim
+      jpegoptim
       pkgs.libjxl
       pkgs.libavif
       pkgs.libwebp

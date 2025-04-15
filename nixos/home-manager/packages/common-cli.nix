@@ -28,7 +28,7 @@ in
     with inputs;
     [
       stow
-      unstable.yt-dlp
+      yt-dlp
       aria2
       ripgrep
       wl-clipboard
@@ -36,7 +36,7 @@ in
       btop
 
       fzf
-      unstable.dwarfs
+      dwarfs
       unrar
     ];
 
@@ -61,6 +61,9 @@ in
       init = {
 
         defaultBranch = "main";
+      };
+      push = {
+        autoSetupRemote = true;
       };
     };
   };

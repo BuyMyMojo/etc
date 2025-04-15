@@ -2,7 +2,9 @@
   description = "Aria's system flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
+    # unstable-nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
     unstable-nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     home-manger.url = "github:nix-community/home-manager?ref=release-24.11";
@@ -16,10 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    moonlight = {
-      url = "github:moonlight-mod/moonlight"; # Add `/develop` to the flake URL to use nightly.
-      inputs.nixpkgs.follows = "unstable-nixpkgs";
-    };
+    #moonlight = {
+    #  url = "github:moonlight-mod/moonlight"; # Add `/develop` to the flake URL to use nightly.
+    #  inputs.nixpkgs.follows = "unstable-nixpkgs";
+    #};
 
     shadps4-git.url = "./programs/shadps4";
 
@@ -49,7 +51,7 @@
         config.allowUnfree = true;
         overlays = [
           nix-your-shell.overlays.default
-          inputs.moonlight.overlays.default
+#          inputs.moonlight.overlays.default
         ];
       };
 

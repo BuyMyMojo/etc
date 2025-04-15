@@ -20,6 +20,7 @@ in
 {
 
   home.packages =
+    with pkgs;
     with unstable;
     with inputs;
     [

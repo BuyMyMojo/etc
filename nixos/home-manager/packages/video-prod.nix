@@ -19,14 +19,15 @@ in
 {
 
   home.packages =
+    with pkgs;
     with unstable;
     with inputs;
     [
-      unstable.svt-av1-psy
-      unstable.ffmpeg-full
-      unstable.ab-av1
-      unstable.whisper-cpp-vulkan
-      unstable.video-compare
+      svt-av1-psy
+      # unstable.ffmpeg-full
+      ab-av1
+      # whisper-cpp-vulkan
+      video-compare
     ];
 
 }
