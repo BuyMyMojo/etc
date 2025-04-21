@@ -61,6 +61,7 @@ in
       # === Media ===
 
       orca-slicer
+      exodus
     ];
 
 #  programs.moonlight-mod = {
